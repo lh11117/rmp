@@ -1,0 +1,1 @@
+System.register([],(function(t,e){"use strict";return{execute:function(){const e="https://railmapgen.org";t("r",`${e}/v1/randomStationNames`),t("s",`${e}/v1/share`),t("i","__TAURI__"in window.parent)}}}));
