@@ -152,7 +152,7 @@ const ToolsPanel = () => {
                             </Flex>
 
                             {Object.values(LinePathType)
-                                .filter(_ => false)
+                                .filter(type => !(type === LinePathType.Simple && unlockSimplePathAttempts >= 0))
                                 .map(type => (
                                     <Button
                                         key={type}
