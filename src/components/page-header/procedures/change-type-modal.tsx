@@ -144,6 +144,7 @@ export const ChangeTypeModal = (props: {
                     label: t('header.settings.procedures.changeStationType.changeFrom'),
                     options: availableStationOptions,
                     value: currentStationType,
+                    disabledOptions: [newStationType],
                     onChange: value => setCurrentStationType(value as StationType | 'any'),
                 },
                 {
@@ -151,6 +152,7 @@ export const ChangeTypeModal = (props: {
                     label: t('header.settings.procedures.changeStationType.changeTo'),
                     options: availableStationOptions,
                     value: newStationType,
+                    disabledOptions: ['any', currentStationType],
                     onChange: value => setNewStationType(value as StationType),
                 },
             ],
@@ -165,6 +167,7 @@ export const ChangeTypeModal = (props: {
                     label: t('header.settings.procedures.changeLineStyleType.changeFrom'),
                     options: availableLineStyleOptions,
                     value: currentLineStyleType,
+                    disabledOptions: [newLineStyleType],
                     onChange: value => setCurrentLineStyleType(value as LineStyleType | 'any'),
                 },
                 {
@@ -172,6 +175,7 @@ export const ChangeTypeModal = (props: {
                     label: t('header.settings.procedures.changeLineStyleType.changeTo'),
                     options: availableLineStyleOptions,
                     value: newLineStyleType,
+                    disabledOptions: ['any', currentLineStyleType],
                     onChange: value => setNewLineStyleType(value as LineStyleType),
                 },
             ],
@@ -186,6 +190,7 @@ export const ChangeTypeModal = (props: {
                     label: t('header.settings.procedures.changeLinePathType.changeFrom'),
                     options: availableLinePathOptions,
                     value: currentLinePathType,
+                    disabledOptions: [newLinePathType],
                     onChange: value => setCurrentLinePathType(value as LinePathType | 'any'),
                 },
                 {
@@ -193,6 +198,7 @@ export const ChangeTypeModal = (props: {
                     label: t('header.settings.procedures.changeLinePathType.changeTo'),
                     options: availableLinePathOptions,
                     value: newLinePathType,
+                    disabledOptions: ['any', 'simple', currentLinePathType],
                     onChange: value => setNewLinePathType(value as LinePathType),
                 },
             ],
@@ -340,7 +346,7 @@ export const ChangeTypeModal = (props: {
                                     </Box>
                                     <AccordionIcon />
                                 </AccordionButton>
-                                <AccordionPanel pb={4}>
+                                <AccordionPanel pb={4} minH={420}>
                                     <RmgFields fields={p.field} minW={270} />
                                 </AccordionPanel>
                             </AccordionItem>
@@ -352,23 +358,11 @@ export const ChangeTypeModal = (props: {
                     <Button colorScheme="blue" variant="outline" mr="1" onClick={onClose}>
                         {t('cancel')}
                     </Button>
-                    {/* <Tooltip label={t('header.settings.pro')} isOpen={!activeSubscriptions.RMP_CLOUD}>
-                        <Button
-                            colorScheme="red"
-                            mr="1"
-                            onClick={handleChange}
-                            isDisabled={
-                                !activeSubscriptions.RMP_CLOUD ||
-                                (!isZIndexSwitch &&
-                                    !isStationTypeSwitch &&
-                                    !isLineStyleTypeSwitch &&
-                                    !isLinePathTypeSwitch &&
-                                    !isColorSwitch)
-                            }
-                        >
+                    <Tooltip label={t('header.settings.pro')} isOpen={false}>
+                        <Button colorScheme="red" mr="1" onClick={handleChange} isDisabled={false}>
                             {t('apply')}
                         </Button>
-                    </Tooltip> */}
+                    </Tooltip>
                 </ModalFooter>
             </ModalContent>
         </Modal>
