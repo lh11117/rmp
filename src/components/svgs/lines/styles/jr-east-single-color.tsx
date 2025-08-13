@@ -64,7 +64,12 @@ const jrEastSingleColor: LineStyle<JREastSingleColorAttributes> = {
     attrsComponent: jrEastSingleColorAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.jrEastSingleColor.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

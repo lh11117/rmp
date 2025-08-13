@@ -33,7 +33,7 @@ const DetailsPanel = () => {
     } = useRootSelector(state => state.runtime);
     const [selectedFirst] = selected;
 
-    const isMasterDisabled = !activeSubscriptions.RMP_CLOUD && masterNodesCount + 1 > MAX_MASTER_NODE_FREE;
+    const isMasterDisabled = false;
 
     const handleClose = () => dispatch(clearSelected());
     const handleDuplicate = (selectedFirst: string) => {

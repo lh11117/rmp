@@ -6,8 +6,8 @@ export interface ActiveSubscriptions {
 }
 
 export const defaultActiveSubscriptions: ActiveSubscriptions = {
-    RMP_CLOUD: false,
-    RMP_EXPORT: false,
+    RMP_CLOUD: true,
+    RMP_EXPORT: true,
 };
 
 /**
@@ -15,7 +15,7 @@ export const defaultActiveSubscriptions: ActiveSubscriptions = {
  * Note login and management part should leave to rmg-home and only authenticate here.
  */
 export interface AccountState {
-    state: 'logged-out' | 'free' | 'subscriber' | 'expired';
+    state: 'subscriber';
     activeSubscriptions: ActiveSubscriptions;
     /**
      * Use this token to communicate with server.
@@ -29,7 +29,7 @@ export interface AccountState {
 }
 
 export const initialState: AccountState = {
-    state: 'logged-out',
+    state: 'subscriber',
     activeSubscriptions: defaultActiveSubscriptions,
     token: undefined,
 };

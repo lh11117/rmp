@@ -47,31 +47,8 @@ const updateToken = async (store: ReturnType<typeof createStore>, token: string)
 };
 
 export const updateLoginStateAndSubscriptions = async (dispatch: RootDispatch, token: string) => {
-    const rep = await fetch(subscription_endpoint, {
-        headers: {
-            accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-        },
-    });
-    if (rep.status !== 200) {
-        logger.debug('Token is invalid, expiring the login state');
-        dispatch(setState('expired'));
-        dispatch(setActiveSubscriptions(defaultActiveSubscriptions));
-        return;
-    }
-
-    dispatch(setState('free'));
-    const subscriptions = (await rep.json()).subscriptions as APISubscription[];
-
     const activeSubscriptions = structuredClone(defaultActiveSubscriptions);
-    for (const subscription of subscriptions) {
-        const type = subscription.type;
-        if (type in activeSubscriptions) {
-            dispatch(setState('subscriber'));
-            activeSubscriptions[type as keyof ActiveSubscriptions] = true;
-        }
-    }
+    dispatch(setState('subscriber'));
     dispatch(setActiveSubscriptions(activeSubscriptions));
     logger.debug(`Token is valid, setting active subscriptions: ${JSON.stringify(activeSubscriptions)}`);
 };
@@ -98,7 +75,7 @@ export const onLocalStorageChangeRMT = (store: ReturnType<typeof createStore>) =
         if (!accountString) {
             logger.debug('Account string is empty, logging out');
             store.dispatch(setToken(undefined));
-            store.dispatch(setState('logged-out'));
+            store.dispatch(setState('subscriber'));
             store.dispatch(setActiveSubscriptions(defaultActiveSubscriptions));
             return;
         }

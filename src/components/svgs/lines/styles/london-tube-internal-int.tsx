@@ -47,7 +47,12 @@ const londonTubeInternalInt: LineStyle<LondonTubeInternalIntAttributes> = {
     attrsComponent,
     metadata: {
         displayName: 'panel.details.lines.londonTubeInternalInt.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

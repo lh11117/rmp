@@ -68,7 +68,12 @@ const mtrRaceDays: LineStyle<MTRRaceDaysAttributes> = {
     attrsComponent: MTRRaceDaysAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.mtrRaceDays.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

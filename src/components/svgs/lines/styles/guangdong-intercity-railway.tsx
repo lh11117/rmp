@@ -39,7 +39,12 @@ const guangdongIntercityRailway: LineStyle<GuangdongIntercityRailwayAttributes> 
     attrsComponent,
     metadata: {
         displayName: 'panel.details.lines.guangdongIntercityRailway.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

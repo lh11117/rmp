@@ -63,7 +63,12 @@ const lrtSingleColor: LineStyle<LRTSingleColorAttributes> = {
     attrsComponent: lrtSingleColorAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.lrtSingleColor.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

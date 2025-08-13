@@ -117,7 +117,7 @@ export const refreshNodesThunk = createAsyncThunk('runtime/refreshNodes', async 
     });
 
     dispatch(setNodesCount({ stations, miscNodes, masters }));
-    const maximumMasterNodes = state.account.activeSubscriptions.RMP_CLOUD ? MAX_MASTER_NODE_PRO : MAX_MASTER_NODE_FREE;
+    const maximumMasterNodes = MAX_MASTER_NODE_PRO;
     if (masters > maximumMasterNodes) {
         dispatch(
             setGlobalAlert({
@@ -146,9 +146,7 @@ export const refreshEdgesThunk = createAsyncThunk('runtime/refreshEdges', async 
 
     const parallelLinesCount = countParallelLines(window.graph);
     dispatch(setEdgesCount({ lines, parallel: parallelLinesCount }));
-    const maximumParallelLines = state.account.activeSubscriptions.RMP_CLOUD
-        ? MAX_PARALLEL_LINES_PRO
-        : MAX_PARALLEL_LINES_FREE;
+    const maximumParallelLines = MAX_PARALLEL_LINES_PRO;
     if (parallelLinesCount >= maximumParallelLines) {
         dispatch(setAutoParallel(false));
     }

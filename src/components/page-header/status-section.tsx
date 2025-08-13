@@ -82,7 +82,7 @@ export const StatusSection = () => {
                         variant="ghost"
                         size="sm"
                         icon={<MdRefresh />}
-                        isDisabled={isRefreshDisabled}
+                        isDisabled={false}
                         onClick={() => handleClick()}
                     />
                 </Box>

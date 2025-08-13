@@ -65,7 +65,12 @@ const londonIFSCloudCableCar: LineStyle<LondonIFSCloudCableCarAttributes> = {
     attrsComponent: LondonIFSCloudCableCarAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.londonIFSCloudCableCar.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

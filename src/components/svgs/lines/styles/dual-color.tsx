@@ -130,7 +130,12 @@ const dualColor: LineStyle<DualColorAttributes> = {
     attrsComponent: dualColorAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.dualColor.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

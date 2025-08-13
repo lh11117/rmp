@@ -70,7 +70,12 @@ const chongqingRTLoop: LineStyle<ChongqingRTLoopAttributes> = {
     attrsComponent: chongqingRTLoopAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.chongqingRTLoop.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

@@ -45,10 +45,7 @@ export const UnlockSimplePathModal = (props: { isOpen: boolean; onClose: () => v
                         label={t('header.settings.pro')}
                         isOpen={!activeSubscriptions.RMP_CLOUD && unlockSimplePathAttempts >= 0}
                     >
-                        <Button
-                            onClick={handleChange}
-                            isDisabled={!activeSubscriptions.RMP_CLOUD || unlockSimplePathAttempts < 0}
-                        >
+                        <Button onClick={handleChange}>
                             {unlockSimplePathAttempts >= 0
                                 ? t('header.settings.procedures.unlockSimplePath.check')
                                 : t('header.settings.procedures.unlockSimplePath.unlocked')}

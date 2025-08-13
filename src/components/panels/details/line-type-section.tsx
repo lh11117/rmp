@@ -62,12 +62,8 @@ export default function LineTypeSection() {
         setCurrentLineStyleType(graph.current.getEdgeAttribute(selectedFirst, 'style'));
     }, [selectedFirst]);
 
-    const disabledLinePathOptions = Object.values(LinePathType).filter(
-        linePathType => !lineStyles[currentLineStyleType].metadata.supportLinePathType.includes(linePathType)
-    );
-    const disabledLineStyleOptions = Object.values(LineStyleType).filter(
-        lineStyleType => !lineStyles[lineStyleType].metadata.supportLinePathType.includes(currentLinePathType)
-    );
+    const disabledLinePathOptions = Object.values(LinePathType).filter(_ => false);
+    const disabledLineStyleOptions = Object.values(LineStyleType).filter(_ => false);
 
     const handleChangeLinePathType = () => {
         if (newLinePathType) {

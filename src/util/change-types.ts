@@ -125,7 +125,7 @@ export const changeLinePathType = (
         // calculate parallel index before changing the type
         // so that makeParallelIndex won't consider this line as an existing line
         let parallelIndex = -1;
-        if (autoParallel && newLinePathType !== LinePathType.Simple) {
+        if (autoParallel) {
             const [source, target] = graph.extremities(selectedFirst) as [StnId | MiscNodeId, StnId | MiscNodeId];
             const startFrom = (newAttrs as NonSimpleLinePathAttributes).startFrom;
             parallelIndex = makeParallelIndex(graph, newLinePathType, source, target, startFrom);
@@ -173,6 +173,7 @@ export const changeLineStyleType = (
 ) => {
     const currentLinePathType = graph.getEdgeAttribute(selectedFirst, 'type');
     const currentLineStyleType = graph.getEdgeAttribute(selectedFirst, 'style');
+    console.log(lineStyles[newLineStyleType].metadata.supportLinePathType);
     if (lineStyles[newLineStyleType].metadata.supportLinePathType.includes(currentLinePathType)) {
         const oldZIndex = graph.getEdgeAttribute(selectedFirst, 'zIndex');
         const oldAttrs = graph.getEdgeAttribute(selectedFirst, currentLineStyleType);

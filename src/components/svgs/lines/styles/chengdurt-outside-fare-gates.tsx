@@ -40,7 +40,12 @@ const chengduRTOutsideFareGates: LineStyle<ChengduRTOutsideFareGatesAttributes> 
     defaultAttrs: {},
     metadata: {
         displayName: 'panel.details.lines.chengduRTOutsideFareGates.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

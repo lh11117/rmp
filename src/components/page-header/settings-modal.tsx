@@ -88,9 +88,9 @@ const SettingsModal = (props: { isOpen: boolean; onClose: () => void }) => {
         dispatch(setTelemetryProject(allowTelemetry));
     };
 
-    const maximumParallelLines = activeSubscriptions.RMP_CLOUD ? MAX_PARALLEL_LINES_PRO : MAX_PARALLEL_LINES_FREE;
+    const maximumParallelLines = MAX_PARALLEL_LINES_PRO;
     const isParallelLineDisabled = parallelLinesCount >= maximumParallelLines;
-    const isRandomStationNamesDisabled = !activeSubscriptions.RMP_CLOUD;
+    const isRandomStationNamesDisabled = false;
 
     const handleRandomStationNamesChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         dispatch(setRandomStationsNames(event.target.value as 'none' | StationCity));
@@ -134,7 +134,7 @@ const SettingsModal = (props: { isOpen: boolean; onClose: () => void }) => {
                                     </Tooltip>
                                     <Switch
                                         ml="1"
-                                        isDisabled={isParallelLineDisabled}
+                                        isDisabled={false}
                                         isChecked={autoParallel}
                                         onChange={({ target: { checked } }) => dispatch(setAutoParallel(checked))}
                                     />
@@ -163,10 +163,10 @@ const SettingsModal = (props: { isOpen: boolean; onClose: () => void }) => {
                                         <option value="none">
                                             {t('header.settings.preference.randomStationNames.none')}
                                         </option>
-                                        <option value={StationCity.Shmetro} disabled={isRandomStationNamesDisabled}>
+                                        <option value={StationCity.Shmetro} disabled={false}>
                                             {t(`header.settings.preference.randomStationNames.${StationCity.Shmetro}`)}
                                         </option>
-                                        <option value={StationCity.Bjsubway} disabled={isRandomStationNamesDisabled}>
+                                        <option value={StationCity.Bjsubway} disabled={false}>
                                             {t(`header.settings.preference.randomStationNames.${StationCity.Bjsubway}`)}
                                         </option>
                                     </Select>

@@ -71,7 +71,12 @@ const londonLutonAirportDART: LineStyle<LondonLutonAirportDARTAttributes> = {
     attrsComponent: londonLutonAirportDARTAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.londonLutonAirportDART.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

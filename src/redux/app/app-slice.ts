@@ -50,7 +50,7 @@ export const initialState: AppState = {
         project: true,
     },
     preference: {
-        unlockSimplePathAttempts: 3,
+        unlockSimplePathAttempts: -1,
         toolsPanel: {
             expand: true,
         },

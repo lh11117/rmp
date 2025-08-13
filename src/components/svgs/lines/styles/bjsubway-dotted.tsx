@@ -64,7 +64,12 @@ const bjsubwayDotted: LineStyle<BjsubwayDottedAttributes> = {
     attrsComponent: BJSubwayDottedAttrsComponent,
     metadata: {
         displayName: 'panel.details.lines.bjsubwayDotted.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 

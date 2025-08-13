@@ -58,7 +58,12 @@ const chinaRailway: LineStyle<ChinaRailwayAttributes> = {
     attrsComponent,
     metadata: {
         displayName: 'panel.details.lines.chinaRailway.displayName',
-        supportLinePathType: [LinePathType.Diagonal, LinePathType.Perpendicular, LinePathType.RotatePerpendicular],
+        supportLinePathType: [
+            LinePathType.Diagonal,
+            LinePathType.Perpendicular,
+            LinePathType.RotatePerpendicular,
+            LinePathType.Simple,
+        ],
     },
 };
 
